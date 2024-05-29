@@ -9,6 +9,7 @@ interface Adivce {
 }
 function App() {
   const [advice, setadvice] = useState<Adivce>();
+  const [count, setcount] = useState();
   useEffect(() => {
     const fechData = async () => {
       const res = await fetch("https://api.adviceslip.com/advice");
@@ -19,11 +20,8 @@ function App() {
   }, []);
   return (
     <Container>
-      <h1>ADVICE #117</h1>
-      <p>
-        “It is easy to sit up and take notice, what's difficult is getting up
-        and taking action.”
-      </p>
+      <h1>ADVICE #{advice?.slip.id}</h1>
+      <p>{advice?.slip.advice}</p>
       <img src="/images/pattern-divider-desktop.svg" alt="" />
       <button>
         <img src="/images/icon-dice.svg" alt="" />
