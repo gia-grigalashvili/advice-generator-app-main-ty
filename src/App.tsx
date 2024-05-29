@@ -5,7 +5,11 @@ function App() {
   return (
     <Container>
       <h1>ADVICE #117</h1>
-      <p>blabla</p>
+      <p>
+        “It is easy to sit up and take notice, what's difficult is getting up
+        and taking action.”
+      </p>
+      <img src="/images/pattern-divider-desktop.svg" alt="" />
     </Container>
   );
 }
@@ -30,6 +34,9 @@ const Container = styled.div`
   }
   p {
     font-weight: 800;
+    color: #ece7e7;
+    font-size: 28px;
+    margin: 24px 0 40px;
   }
 `;
 export default App;
