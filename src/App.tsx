@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {}, []);
   return (
     <Container>
       <h1>ADVICE #117</h1>
@@ -10,6 +12,9 @@ function App() {
         and taking action.”
       </p>
       <img src="/images/pattern-divider-desktop.svg" alt="" />
+      <button>
+        <img src="/images/icon-dice.svg" alt="" />
+      </button>
     </Container>
   );
 }
@@ -37,6 +42,14 @@ const Container = styled.div`
     color: #ece7e7;
     font-size: 28px;
     margin: 24px 0 40px;
+  }
+  button {
+    background-color: #53ffaa;
+    border: none;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
   }
 `;
 export default App;
