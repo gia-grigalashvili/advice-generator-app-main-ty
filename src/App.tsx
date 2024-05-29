@@ -1,9 +1,22 @@
 import styled from "styled-components";
 import "./App.css";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+interface Adivce {
+  slip: {
+    id: number;
+    advice: string;
+  };
+}
 function App() {
-  useEffect(() => {}, []);
+  const [advice, setadvice] = useState<Adivce>();
+  useEffect(() => {
+    const fechData = async () => {
+      const res = await fetch("https://api.adviceslip.com/advice");
+      const data = await res.json();
+      setadvice(data);
+    };
+    fechData();
+  }, []);
   return (
     <Container>
       <h1>ADVICE #117</h1>
